@@ -7,9 +7,9 @@
 ## Usage
 
 1. clone the repo
-2. use `docke build -t nginxproxy .` to build the image
-3. use `docker run -t -p 8888:8080 nginxproxy`
-4. go to http://localhost:8888
+2. use `docker-composer build ` to build the images
+3. use `docker-composer up `
+4. go to http://localhost:8080
 
 ## Diagram
 
