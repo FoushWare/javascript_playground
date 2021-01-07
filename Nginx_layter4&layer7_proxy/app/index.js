@@ -9,6 +9,10 @@ if (!APP_ID) {
   process.exit(1);
 }
 
+app.get("/admin", (_req, res) => {
+  res.send("you can only access the admin from the internal server");
+});
+
 app.use("*", (_, res) => res.send(`This is app: ${APP_ID} works on port ${PORT}`));
 
 app.listen(PORT, () => console.log(`App ${APP_ID} => Up and running on ${PORT}`));
