@@ -5,8 +5,12 @@ version: "3"
 services:
   nginx_lb:
     build: .
+    volumes:
+      - ./certbot/conf:/etc/nginx/ssl
+      - ./certbot/data:/var/www/certbot
     ports:
       - 80:80
+      - 443:443
 
   node1:
     build: app
@@ -28,3 +32,22 @@ services:
     environment:
       - APP_ID=4
       - PORT=5555
+  certbot:
+    image: certbot/certbot:latest
+    command: certonly --webroot --webroot-path=/var/www/certbot --email fouad992@gmail.com --agree-tos --no-eff-email -d foushware.hopto.org
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/logs:/var/log/letsencrypt
+      - ./certbot/data:/var/www/certbot
+
+  #     command:
+  # - certonly
+  # - --webroot
+  # - -w
+  # - /var/www/certbot/html
+  # - --email={email}
+  # - --agree-tos
+  # - --no-eff-email
+  # - --dry-run
+  # - -d
+  # - {domain}
