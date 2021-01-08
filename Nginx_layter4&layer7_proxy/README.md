@@ -16,3 +16,22 @@
 <p align="center">
   <img alt="Diagram" src="./diagram.png">
 </p>
+
+## Create DNS Record
+
+- Port forwarding
+<p align="center">
+  <img alt="port_forwarding" src="./port_forwarding.png">
+</p>
+
+- DNS_With_noip
+
+<p align="center">
+  <img alt="DNS_With_noip" src="./DNS_With_noip.png">
+</p>
+
+- DNS works
+
+<p align="center">
+  <img alt="DNS_Works" src="./DNS_Works.png">
+</p>

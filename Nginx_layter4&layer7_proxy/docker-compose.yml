@@ -6,7 +6,7 @@ services:
   nginx_lb:
     build: .
     ports:
-      - 8080:8080
+      - 80:80
 
   node1:
     build: app
